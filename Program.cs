@@ -4,6 +4,9 @@
     {
         static void Main(string[] args)
         {
+
+			ICinemaPricingHelper cinemaPricingHelper = new CinemaPricingHelper();
+
             Console.WriteLine("Welcome, this is the main menu. \n" +
                 "To test the features bellow input its corresponding number!\n");
 
@@ -15,19 +18,21 @@
             {
                 Console.ForegroundColor = ConsoleColor.DarkGray;
 				Console.WriteLine("0: Exit the program.");
+                Console.WriteLine("1: Cinema Pricing.");
                 Console.ResetColor();
 
                 input = Console.ReadLine();
 
 				switch (input)
 				{
-                    case "0": exitProgram = true;
+                    case "0": 
+                        exitProgram = true;
                         break;
-
+                    case "1":
+                        cinemaPricingHelper.CinemaPricingMenu();
+                        break;
 					default:
-                        Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine("You supplied an invalid input, try again!");
-                        Console.ResetColor();
+						ErrorMessages.InvalidIntInput();
                         break;
 				}
             }
