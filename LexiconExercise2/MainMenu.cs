@@ -1,12 +1,13 @@
 ﻿using LexiconExercise2.CinemaPriceHelper;
-using LexiconExercise2.InputEcho;
-using LexiconExercise2.ThirdWordStringSplitter;
+using LexiconExercise2.InputEchoApp;
+using LexiconExercise2.ThirdWordStringSplitterApp;
 using LexiconExercise2.MenuHelpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using LexiconExercise2.Util;
 
 namespace LexiconExercise2
 {

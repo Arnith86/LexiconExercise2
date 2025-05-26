@@ -1,7 +1,8 @@
 ﻿using LexiconExercise2.MenuHelpers;
+using LexiconExercise2.Util;
 using System.Text.RegularExpressions;
 
-namespace LexiconExercise2.ThirdWordStringSplitter
+namespace LexiconExercise2.ThirdWordStringSplitterApp
 {
 	internal class ThirdWordStringSplitter : IThirdWordStringSplitter
 	{

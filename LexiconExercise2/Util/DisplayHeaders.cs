@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LexiconExercise2
+namespace LexiconExercise2.Util
 {
 	internal static class DisplayHeaders
 	{
