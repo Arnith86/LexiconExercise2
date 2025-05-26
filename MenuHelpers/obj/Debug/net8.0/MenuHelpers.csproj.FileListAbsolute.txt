@@ -1,0 +1,11 @@
+C:\Users\Arnit\Documents\GitHub\Lexicon\LexiconExercise2\MenuHelpers\bin\Debug\net8.0\MenuHelpers.deps.json
+C:\Users\Arnit\Documents\GitHub\Lexicon\LexiconExercise2\MenuHelpers\bin\Debug\net8.0\MenuHelpers.dll
+C:\Users\Arnit\Documents\GitHub\Lexicon\LexiconExercise2\MenuHelpers\bin\Debug\net8.0\MenuHelpers.pdb
+C:\Users\Arnit\Documents\GitHub\Lexicon\LexiconExercise2\MenuHelpers\obj\Debug\net8.0\MenuHelpers.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Arnit\Documents\GitHub\Lexicon\LexiconExercise2\MenuHelpers\obj\Debug\net8.0\MenuHelpers.AssemblyInfoInputs.cache
+C:\Users\Arnit\Documents\GitHub\Lexicon\LexiconExercise2\MenuHelpers\obj\Debug\net8.0\MenuHelpers.AssemblyInfo.cs
+C:\Users\Arnit\Documents\GitHub\Lexicon\LexiconExercise2\MenuHelpers\obj\Debug\net8.0\MenuHelpers.csproj.CoreCompileInputs.cache
+C:\Users\Arnit\Documents\GitHub\Lexicon\LexiconExercise2\MenuHelpers\obj\Debug\net8.0\MenuHelpers.dll
+C:\Users\Arnit\Documents\GitHub\Lexicon\LexiconExercise2\MenuHelpers\obj\Debug\net8.0\refint\MenuHelpers.dll
+C:\Users\Arnit\Documents\GitHub\Lexicon\LexiconExercise2\MenuHelpers\obj\Debug\net8.0\MenuHelpers.pdb
+C:\Users\Arnit\Documents\GitHub\Lexicon\LexiconExercise2\MenuHelpers\obj\Debug\net8.0\ref\MenuHelpers.dll
