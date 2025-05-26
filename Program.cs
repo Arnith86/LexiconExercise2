@@ -6,8 +6,8 @@
         {
 
 			ICinemaPricingHelper cinemaPricingHelper = new CinemaPricingHelper();
-            InputEcho inputEcho = new InputEcho();
-
+            IInputEcho inputEcho = new InputEcho();
+            IThirdWordStringSplitter thirdWordStringSplitter = new ThirdWordStringSplitter();
 
             DisplayHeaders.DisplayHeaderText(
                 "Welcome, this is the main menu. \n" +
@@ -25,6 +25,7 @@
 				Console.WriteLine("0: Exit the program.");
                 Console.WriteLine("1: Cinema Pricing.");
                 Console.WriteLine("2: Input Echo. Writes back input multiple times.");
+                Console.WriteLine("3: String Splitter - Which is the third word?");
                 Console.ResetColor();
 
                 input = Console.ReadLine();
@@ -39,6 +40,9 @@
                         break;
                     case "2":
                         inputEcho.InputEchoMenu();
+                        break;
+                    case "3":
+                        thirdWordStringSplitter.ThirdWordStringSplitterMenu();
                         break;
 					default:
 						ErrorMessages.InvalidIntInput();
