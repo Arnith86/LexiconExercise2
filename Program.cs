@@ -1,9 +1,13 @@
-﻿namespace LexiconExercise2
+﻿using LexiconExercise2.MenuHelpers;
+
+namespace LexiconExercise2
 {
     internal class Program
     {
         static void Main(string[] args)
         {
+            //TODO: wrapper class for con in and con out, abstraction
+            //TODO: move code from program to a "main" class
 
 			ICinemaPricingHelper cinemaPricingHelper = new CinemaPricingHelper();
             IInputEcho inputEcho = new InputEcho();
@@ -32,16 +36,16 @@
 
 				switch (input)
 				{
-                    case "0": 
+                    case MainManuHelpers.EXIT: 
                         exitProgram = true;
                         break;
-                    case "1":
+                    case MainManuHelpers.CINEMA_PRICING:
                         cinemaPricingHelper.CinemaPricingMenu();
                         break;
-                    case "2":
+                    case MainManuHelpers.INPUT_ECHO:
                         inputEcho.InputEchoMenu();
                         break;
-                    case "3":
+                    case MainManuHelpers.THIRD_WORD_STRING_SPLITTER:
                         thirdWordStringSplitter.ThirdWordStringSplitterMenu();
                         break;
 					default:

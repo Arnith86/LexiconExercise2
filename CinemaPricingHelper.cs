@@ -1,4 +1,6 @@
 ﻿
+using LexiconExercise2.MenuHelpers;
+
 namespace LexiconExercise2
 {
 	internal class CinemaPricingHelper : ICinemaPricingHelper
@@ -37,13 +39,13 @@ namespace LexiconExercise2
 
 				switch (input)
 				{
-					case "0":
+					case CinemaPricingMenuHelpers.RETURN_TO_MAIN_MENU:
 						return;
 						break;
-					case "1":
+					case CinemaPricingMenuHelpers.SINGLE_VISITOR:
 						DisplayPricing();
 						break;
-					case "2":
+					case CinemaPricingMenuHelpers.GROUP_OF_VISITORS:
 						int nrOfVisitors = RegisterVisitorsNumber();
 						DisplayPricing(nrOfVisitors);
 						break;

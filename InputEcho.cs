@@ -1,4 +1,6 @@
-﻿namespace LexiconExercise2
+﻿using LexiconExercise2.MenuHelpers;
+
+namespace LexiconExercise2
 {
 	internal class InputEcho : IInputEcho
 	{
@@ -25,10 +27,10 @@
 
 				switch (input)
 				{
-					case "0":
+					case InputEchoMenuHelpers.RETURN_TO_MAIN_MENU:
 						return;
 						break;
-					case "1":
+					case InputEchoMenuHelpers.SHOUT_INTO_CHAMBER:
 						RegisterInput();
 						break;
 					default:

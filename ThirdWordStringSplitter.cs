@@ -1,4 +1,5 @@
-﻿using System.Text.RegularExpressions;
+﻿using LexiconExercise2.MenuHelpers;
+using System.Text.RegularExpressions;
 
 namespace LexiconExercise2
 {
@@ -67,10 +68,10 @@ namespace LexiconExercise2
 
 				switch (input)
 				{
-					case "0":
+					case ThirdWordStringSplitterMenuHelpers.RETURN_TO_MAIN_MENU:
 						return;
 						break;
-					case "1":
+					case ThirdWordStringSplitterMenuHelpers.FIND_THIRD_WORD:
 						RegisterInput();
 						break;
 					default:
