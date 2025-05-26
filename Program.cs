@@ -6,9 +6,13 @@
         {
 
 			ICinemaPricingHelper cinemaPricingHelper = new CinemaPricingHelper();
+            InputEcho inputEcho = new InputEcho();
 
-            Console.WriteLine("Welcome, this is the main menu. \n" +
-                "To test the features bellow input its corresponding number!\n");
+
+            DisplayHeaders.DisplayHeaderText(
+                "Welcome, this is the main menu. \n" +
+                "To test the features bellow input its corresponding number!\n"
+            );
 
             bool exitProgram = false;
 
@@ -16,9 +20,11 @@
 
             do
             {
+                //TODO: create menu display class.
                 Console.ForegroundColor = ConsoleColor.DarkGray;
 				Console.WriteLine("0: Exit the program.");
                 Console.WriteLine("1: Cinema Pricing.");
+                Console.WriteLine("2: Input Echo. Writes back input 10 times.");
                 Console.ResetColor();
 
                 input = Console.ReadLine();
@@ -31,6 +37,8 @@
                     case "1":
                         cinemaPricingHelper.CinemaPricingMenu();
                         break;
+                    case "2":
+
 					default:
 						ErrorMessages.InvalidIntInput();
                         break;

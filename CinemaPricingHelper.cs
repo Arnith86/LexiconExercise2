@@ -18,12 +18,10 @@ namespace LexiconExercise2
 		{
 			bool returnToMainMenu = false;
 
-			//TODO: a header displayer
 			Console.Clear();
-			Console.ForegroundColor = ConsoleColor.Magenta;
-			Console.WriteLine("Cinema Pricing! \nHere to help you find the correct pricing for individuals or groups!");
-			Console.ResetColor();
-
+			 
+			DisplayHeaders.DisplayHeaderText("Cinema Pricing! \nHere to help you find the correct pricing for individuals or groups!");
+			
 			do
 			{
 				Console.ForegroundColor = ConsoleColor.DarkGray;
