@@ -1,5 +1,4 @@
-﻿
-namespace LexiconExercise2
+﻿namespace LexiconExercise2.Util
 {
 	/// <summary>
 	/// This static class supplies generic error messages that can be used throughout the application.

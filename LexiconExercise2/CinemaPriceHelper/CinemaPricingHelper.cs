@@ -5,6 +5,7 @@ namespace LexiconExercise2.CinemaPriceHelper
 {
 	internal class CinemaPricingHelper : ICinemaPricingHelper
 	{
+		//TODO: fix bug in groups, seems to register values even though person is older then 100
 		//TODO: use uint when none negative int input is required
 
 		/// <summary>

@@ -1,5 +1,7 @@
 ﻿using LexiconExercise2.CinemaPriceHelper;
+using LexiconExercise2.InputEchoApp;
 using LexiconExercise2.MenuHelpers;
+using LexiconExercise2.ThirdWordStringSplitterApp;
 
 namespace LexiconExercise2
 {
@@ -10,7 +12,7 @@ namespace LexiconExercise2
             //TODO: wrapper class for con in and con out, abstraction
             
 			ICinemaPricingHelper cinemaPricingHelper = new CinemaPricingHelper();
-            IInputEcho inputEcho = new InputEcho();
+			IInputEcho inputEcho = new InputEcho();
             IThirdWordStringSplitter thirdWordStringSplitter = new ThirdWordStringSplitter();
 
             MainMenu mainMenu = new MainMenu(cinemaPricingHelper, inputEcho, thirdWordStringSplitter);
