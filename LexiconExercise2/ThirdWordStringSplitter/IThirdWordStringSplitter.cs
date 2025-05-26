@@ -1,4 +1,4 @@
-﻿namespace LexiconExercise2
+﻿namespace LexiconExercise2.ThirdWordStringSplitter
 {
 	internal interface IThirdWordStringSplitter
 	{

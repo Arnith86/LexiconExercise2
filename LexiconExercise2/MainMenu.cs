@@ -1,4 +1,6 @@
 ﻿using LexiconExercise2.CinemaPriceHelper;
+using LexiconExercise2.InputEcho;
+using LexiconExercise2.ThirdWordStringSplitter;
 using LexiconExercise2.MenuHelpers;
 using System;
 using System.Collections.Generic;

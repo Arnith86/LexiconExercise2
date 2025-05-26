@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LexiconExercise2.InputEcho.InputEcho
+namespace LexiconExercise2.InputEcho
 {
 	/// <summary>
 	/// Defines an interface for echoing user input multiple times.

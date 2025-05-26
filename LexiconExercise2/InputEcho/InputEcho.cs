@@ -1,6 +1,6 @@
 ﻿using LexiconExercise2.MenuHelpers;
 
-namespace LexiconExercise2
+namespace LexiconExercise2.InputEcho
 {
 	internal class InputEcho : IInputEcho
 	{
