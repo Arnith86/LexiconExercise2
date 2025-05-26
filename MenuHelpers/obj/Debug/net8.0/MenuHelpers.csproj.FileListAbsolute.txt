@@ -9,3 +9,4 @@ C:\Users\Arnit\Documents\GitHub\Lexicon\LexiconExercise2\MenuHelpers\obj\Debug\n
 C:\Users\Arnit\Documents\GitHub\Lexicon\LexiconExercise2\MenuHelpers\obj\Debug\net8.0\refint\MenuHelpers.dll
 C:\Users\Arnit\Documents\GitHub\Lexicon\LexiconExercise2\MenuHelpers\obj\Debug\net8.0\MenuHelpers.pdb
 C:\Users\Arnit\Documents\GitHub\Lexicon\LexiconExercise2\MenuHelpers\obj\Debug\net8.0\ref\MenuHelpers.dll
+C:\Users\Arnit\Documents\GitHub\Lexicon\LexiconExercise2\MenuHelpers\obj\Debug\net8.0\MenuHelpers.sourcelink.json

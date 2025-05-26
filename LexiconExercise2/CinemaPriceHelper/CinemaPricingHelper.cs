@@ -1,7 +1,6 @@
-﻿
-using LexiconExercise2.MenuHelpers;
+﻿using LexiconExercise2.MenuHelpers;
 
-namespace LexiconExercise2
+namespace LexiconExercise2.CinemaPriceHelper
 {
 	internal class CinemaPricingHelper : ICinemaPricingHelper
 	{
@@ -74,8 +73,10 @@ namespace LexiconExercise2
 				Console.WriteLine("Youth price: {0}\n", IntToCurranty((int)pricing)); 
 			else if (pricing.Equals(AgePricing.Senior))
 				Console.WriteLine("Senior price: {0}\n", IntToCurranty((int)pricing));
+			else if (pricing.Equals(AgePricing.Standard))
+				Console.WriteLine("Standard price: {0}\n", IntToCurranty((int)pricing));
 			else
-				Console.WriteLine("Standard price: {0}\n", IntToCurranty((int)pricing)); 
+				Console.WriteLine("Free: {0}\n", IntToCurranty((int)pricing));
 		}
 
 		///<inheritdoc/>
@@ -130,7 +131,7 @@ namespace LexiconExercise2
 				input = Console.ReadLine();
 
 				// Validates the input to ensure that it is a valid age
-				if (int.TryParse(input, out int age) && age > 0 && age < 180)
+				if (int.TryParse(input, out int age) && age >= 0 && age < 180)
 					return age;
 				else
 					ErrorMessages.InvalidAgeInput();

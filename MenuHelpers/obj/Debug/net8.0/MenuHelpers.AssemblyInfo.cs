@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MenuHelpers")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+52ac566ff8a56210221d1bf19bc803914757cb0d")]
 [assembly: System.Reflection.AssemblyProductAttribute("MenuHelpers")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MenuHelpers")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,4 +1,5 @@
-﻿using LexiconExercise2.MenuHelpers;
+﻿using LexiconExercise2.CinemaPriceHelper;
+using LexiconExercise2.MenuHelpers;
 
 namespace LexiconExercise2
 {

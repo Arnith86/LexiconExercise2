@@ -1,4 +1,5 @@
-﻿using LexiconExercise2.MenuHelpers;
+﻿using LexiconExercise2.CinemaPriceHelper;
+using LexiconExercise2.MenuHelpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;

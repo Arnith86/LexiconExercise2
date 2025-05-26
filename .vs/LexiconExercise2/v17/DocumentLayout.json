@@ -3,24 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\Arnit\\Documents\\GitHub\\Lexicon\\LexiconExercise2\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0104C646-E9F3-4877-A867-97BA299A5DA2}|LexiconExercise2\\LexiconExercise2.csproj|c:\\users\\arnit\\documents\\github\\lexicon\\lexiconexercise2\\lexiconexercise2\\thirdwordstringsplitter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0104C646-E9F3-4877-A867-97BA299A5DA2}|LexiconExercise2\\LexiconExercise2.csproj|solutionrelative:lexiconexercise2\\thirdwordstringsplitter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0104C646-E9F3-4877-A867-97BA299A5DA2}|LexiconExercise2\\LexiconExercise2.csproj|c:\\users\\arnit\\documents\\github\\lexicon\\lexiconexercise2\\lexiconexercise2\\cinemapricehelper\\cinemapricinghelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0104C646-E9F3-4877-A867-97BA299A5DA2}|LexiconExercise2\\LexiconExercise2.csproj|solutionrelative:lexiconexercise2\\cinemapricehelper\\cinemapricinghelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{175D7D2F-99D3-445E-8EB1-653D5099428C}|MenuHelpers\\MenuHelpers.csproj|c:\\users\\arnit\\documents\\github\\lexicon\\lexiconexercise2\\menuhelpers\\menuhelpers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{175D7D2F-99D3-445E-8EB1-653D5099428C}|MenuHelpers\\MenuHelpers.csproj|solutionrelative:menuhelpers\\menuhelpers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0104C646-E9F3-4877-A867-97BA299A5DA2}|LexiconExercise2\\LexiconExercise2.csproj|c:\\users\\arnit\\documents\\github\\lexicon\\lexiconexercise2\\lexiconexercise2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0104C646-E9F3-4877-A867-97BA299A5DA2}|LexiconExercise2\\LexiconExercise2.csproj|solutionrelative:lexiconexercise2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0104C646-E9F3-4877-A867-97BA299A5DA2}|LexiconExercise2\\LexiconExercise2.csproj|c:\\users\\arnit\\documents\\github\\lexicon\\lexiconexercise2\\lexiconexercise2\\mainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0104C646-E9F3-4877-A867-97BA299A5DA2}|LexiconExercise2\\LexiconExercise2.csproj|solutionrelative:lexiconexercise2\\mainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0104C646-E9F3-4877-A867-97BA299A5DA2}|LexiconExercise2\\LexiconExercise2.csproj|c:\\users\\arnit\\documents\\github\\lexicon\\lexiconexercise2\\lexiconexercise2\\inputecho.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0104C646-E9F3-4877-A867-97BA299A5DA2}|LexiconExercise2\\LexiconExercise2.csproj|solutionrelative:lexiconexercise2\\inputecho.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0104C646-E9F3-4877-A867-97BA299A5DA2}|LexiconExercise2\\LexiconExercise2.csproj|c:\\users\\arnit\\documents\\github\\lexicon\\lexiconexercise2\\lexiconexercise2\\cinemapricinghelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0104C646-E9F3-4877-A867-97BA299A5DA2}|LexiconExercise2\\LexiconExercise2.csproj|solutionrelative:lexiconexercise2\\cinemapricinghelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0104C646-E9F3-4877-A867-97BA299A5DA2}|LexiconExercise2\\LexiconExercise2.csproj|c:\\users\\arnit\\documents\\github\\lexicon\\lexiconexercise2\\lexiconexercise2\\thirdwordstringsplitter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0104C646-E9F3-4877-A867-97BA299A5DA2}|LexiconExercise2\\LexiconExercise2.csproj|solutionrelative:lexiconexercise2\\thirdwordstringsplitter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0104C646-E9F3-4877-A867-97BA299A5DA2}|LexiconExercise2\\LexiconExercise2.csproj|c:\\users\\arnit\\documents\\github\\lexicon\\lexiconexercise2\\lexiconexercise2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0104C646-E9F3-4877-A867-97BA299A5DA2}|LexiconExercise2\\LexiconExercise2.csproj|solutionrelative:lexiconexercise2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{175D7D2F-99D3-445E-8EB1-653D5099428C}|MenuHelpers\\MenuHelpers.csproj|c:\\users\\arnit\\documents\\github\\lexicon\\lexiconexercise2\\menuhelpers\\menuhelpers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{175D7D2F-99D3-445E-8EB1-653D5099428C}|MenuHelpers\\MenuHelpers.csproj|solutionrelative:menuhelpers\\menuhelpers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0104C646-E9F3-4877-A867-97BA299A5DA2}|LexiconExercise2\\LexiconExercise2.csproj|c:\\users\\arnit\\documents\\github\\lexicon\\lexiconexercise2\\lexiconexercise2\\ithirdwordstringsplitter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -34,7 +38,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 193,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -46,7 +50,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "InputEcho.cs",
               "DocumentMoniker": "C:\\Users\\Arnit\\Documents\\GitHub\\Lexicon\\LexiconExercise2\\LexiconExercise2\\InputEcho.cs",
               "RelativeDocumentMoniker": "LexiconExercise2\\InputEcho.cs",
@@ -54,11 +58,12 @@
               "RelativeToolTip": "LexiconExercise2\\InputEcho.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAgwCQAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-26T13:22:48.224Z"
+              "WhenOpened": "2025-05-26T13:22:48.224Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "IThirdWordStringSplitter.cs",
               "DocumentMoniker": "C:\\Users\\Arnit\\Documents\\GitHub\\Lexicon\\LexiconExercise2\\LexiconExercise2\\IThirdWordStringSplitter.cs",
               "RelativeDocumentMoniker": "LexiconExercise2\\IThirdWordStringSplitter.cs",
@@ -70,40 +75,42 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "ThirdWordStringSplitter.cs",
               "DocumentMoniker": "C:\\Users\\Arnit\\Documents\\GitHub\\Lexicon\\LexiconExercise2\\LexiconExercise2\\ThirdWordStringSplitter.cs",
               "RelativeDocumentMoniker": "LexiconExercise2\\ThirdWordStringSplitter.cs",
               "ToolTip": "C:\\Users\\Arnit\\Documents\\GitHub\\Lexicon\\LexiconExercise2\\LexiconExercise2\\ThirdWordStringSplitter.cs",
               "RelativeToolTip": "LexiconExercise2\\ThirdWordStringSplitter.cs",
-              "ViewState": "AgIAACUAAAAAAAAAAAAIwEIAAAAmAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADsAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-26T08:43:53.704Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "CinemaPricingHelper.cs",
-              "DocumentMoniker": "C:\\Users\\Arnit\\Documents\\GitHub\\Lexicon\\LexiconExercise2\\LexiconExercise2\\CinemaPricingHelper.cs",
-              "RelativeDocumentMoniker": "LexiconExercise2\\CinemaPricingHelper.cs",
-              "ToolTip": "C:\\Users\\Arnit\\Documents\\GitHub\\Lexicon\\LexiconExercise2\\LexiconExercise2\\CinemaPricingHelper.cs",
-              "RelativeToolTip": "LexiconExercise2\\CinemaPricingHelper.cs",
-              "ViewState": "AgIAABoAAAAAAAAAAAAcwDcAAAAEAAAAAAAAAA==",
+              "DocumentMoniker": "C:\\Users\\Arnit\\Documents\\GitHub\\Lexicon\\LexiconExercise2\\LexiconExercise2\\CinemaPriceHelper\\CinemaPricingHelper.cs",
+              "RelativeDocumentMoniker": "LexiconExercise2\\CinemaPriceHelper\\CinemaPricingHelper.cs",
+              "ToolTip": "C:\\Users\\Arnit\\Documents\\GitHub\\Lexicon\\LexiconExercise2\\LexiconExercise2\\CinemaPriceHelper\\CinemaPricingHelper.cs",
+              "RelativeToolTip": "LexiconExercise2\\CinemaPriceHelper\\CinemaPricingHelper.cs",
+              "ViewState": "AgIAAGQAAAAAAAAAAAAwwIUAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-23T13:17:48.322Z"
+              "WhenOpened": "2025-05-23T13:17:48.322Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Arnit\\Documents\\GitHub\\Lexicon\\LexiconExercise2\\LexiconExercise2\\Program.cs",
               "RelativeDocumentMoniker": "LexiconExercise2\\Program.cs",
               "ToolTip": "C:\\Users\\Arnit\\Documents\\GitHub\\Lexicon\\LexiconExercise2\\LexiconExercise2\\Program.cs",
               "RelativeToolTip": "LexiconExercise2\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAA8AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-23T12:21:53.57Z"
+              "WhenOpened": "2025-05-23T12:21:53.57Z",
+              "EditorCaption": ""
             }
           ]
         },
@@ -113,13 +120,26 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
+              "Title": "MainMenu.cs",
+              "DocumentMoniker": "C:\\Users\\Arnit\\Documents\\GitHub\\Lexicon\\LexiconExercise2\\LexiconExercise2\\MainMenu.cs",
+              "RelativeDocumentMoniker": "LexiconExercise2\\MainMenu.cs",
+              "ToolTip": "C:\\Users\\Arnit\\Documents\\GitHub\\Lexicon\\LexiconExercise2\\LexiconExercise2\\MainMenu.cs",
+              "RelativeToolTip": "LexiconExercise2\\MainMenu.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-26T13:58:22.796Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "MenuHelpers.cs",
               "DocumentMoniker": "C:\\Users\\Arnit\\Documents\\GitHub\\Lexicon\\LexiconExercise2\\MenuHelpers\\MenuHelpers.cs",
               "RelativeDocumentMoniker": "MenuHelpers\\MenuHelpers.cs",
               "ToolTip": "C:\\Users\\Arnit\\Documents\\GitHub\\Lexicon\\LexiconExercise2\\MenuHelpers\\MenuHelpers.cs",
               "RelativeToolTip": "MenuHelpers\\MenuHelpers.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-26T11:54:04.01Z",
               "EditorCaption": ""

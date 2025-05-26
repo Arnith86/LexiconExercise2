@@ -1,4 +1,4 @@
-﻿namespace LexiconExercise2
+﻿namespace LexiconExercise2.CinemaPriceHelper
 {
 	/// <summary>
 	/// Defines helper methods for managing cinema pricing logic.
