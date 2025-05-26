@@ -3,6 +3,8 @@ namespace LexiconExercise2
 {
 	internal class CinemaPricingHelper : ICinemaPricingHelper
 	{
+		//TODO: use uint when none negative int input is required
+
 		/// <summary>
 		/// Enum representing the different age pricing categories for cinema tickets.
 		/// </summary>
@@ -11,6 +13,7 @@ namespace LexiconExercise2
 			Youth = 80,
 			Standard = 120,
 			Senior = 90,
+			Free = 0
 		}
 
 		///<inheritdoc/>
@@ -134,12 +137,16 @@ namespace LexiconExercise2
 
 		private AgePricing EvaluateSingleVisitorPrice(int age)
 		{
+			if (age < 5)
+				return AgePricing.Free;			// Free for children under 5
 			if (age < 20)
-				return AgePricing.Youth;
+				return AgePricing.Youth;        // Youth price for age 5 to 19
 			else if (age > 64)
-				return AgePricing.Senior;
-		
-			return AgePricing.Standard;	
+				return AgePricing.Senior;       // Senior price for age 65 to 100
+			else if (age > 100)
+				return AgePricing.Free;			// Free for seniors over 100
+			
+			return AgePricing.Standard;			// Standard price for ages 20 to 64
 		}
 	}
 }
