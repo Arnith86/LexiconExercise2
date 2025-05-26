@@ -2,6 +2,7 @@
 using LexiconExercise2.InputEchoApp;
 using LexiconExercise2.MenuHelpers;
 using LexiconExercise2.ThirdWordStringSplitterApp;
+using LexiconExercise2.Util;
 
 namespace LexiconExercise2
 {
@@ -9,13 +10,17 @@ namespace LexiconExercise2
     {
         static void Main(string[] args)
         {
-            //TODO: wrapper class for con in and con out, abstraction
-            
-			ICinemaPricingHelper cinemaPricingHelper = new CinemaPricingHelper();
+            ICinemaPricingHelper cinemaPricingHelper = new CinemaPricingHelper();
 			IInputEcho inputEcho = new InputEcho();
             IThirdWordStringSplitter thirdWordStringSplitter = new ThirdWordStringSplitter();
+            IReadAndWriteToConsole readAndWriteToConsole = new ReadAndWriteToConsole();
 
-            MainMenu mainMenu = new MainMenu(cinemaPricingHelper, inputEcho, thirdWordStringSplitter);
+		    MainMenu mainMenu = new MainMenu(
+                cinemaPricingHelper, 
+                inputEcho, 
+                thirdWordStringSplitter,
+				readAndWriteToConsole
+            );
 
             mainMenu.DisplayMainMenu();
         }
