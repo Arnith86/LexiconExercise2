@@ -24,7 +24,7 @@
                 Console.ForegroundColor = ConsoleColor.DarkGray;
 				Console.WriteLine("0: Exit the program.");
                 Console.WriteLine("1: Cinema Pricing.");
-                Console.WriteLine("2: Input Echo. Writes back input 10 times.");
+                Console.WriteLine("2: Input Echo. Writes back input multiple times.");
                 Console.ResetColor();
 
                 input = Console.ReadLine();
@@ -38,7 +38,8 @@
                         cinemaPricingHelper.CinemaPricingMenu();
                         break;
                     case "2":
-
+                        inputEcho.InputEchoMenu();
+                        break;
 					default:
 						ErrorMessages.InvalidIntInput();
                         break;

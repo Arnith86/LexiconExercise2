@@ -48,7 +48,6 @@ namespace LexiconExercise2
 						ErrorMessages.InvalidIntInput(); 
 						break;
 				}
-
 			}
 			while (!returnToMainMenu);
 		}
