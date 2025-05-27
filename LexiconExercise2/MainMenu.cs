@@ -58,8 +58,9 @@ namespace LexiconExercise2
 					rangeMin: 0,
 					rangeMax: 3
 				);
-				
 
+				// Documentation specified error message on default.
+				// Error message is however displayed in the ValidateMenuInput method in ValidateTextInput.cs.
 				switch (input)
 				{
 					case MainManuHelpers.EXIT:
