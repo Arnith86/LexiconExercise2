@@ -5,7 +5,6 @@ namespace LexiconExercise2.CinemaPriceHelper
 {
 	internal class CinemaPricingHelper : ICinemaPricingHelper
 	{
-		//TODO: fix bug in groups, seems to register values even though person is older then 100
 		//TODO: use uint when none negative int input is required
 
 		/// <summary>
@@ -30,11 +29,12 @@ namespace LexiconExercise2.CinemaPriceHelper
 			
 			do
 			{
-				Console.ForegroundColor = ConsoleColor.DarkGray;
-				Console.WriteLine("0: Return to main menu.");
-				Console.WriteLine("1: Single visitor.");
-				Console.WriteLine("2: Group of visitors.");
-				Console.ResetColor();
+				DisplayMenu.DisplayMenuText(
+					"1: Single visitor.\n" +
+					"2: Group of visitors.\n" +
+					"0: Return to main menu.\n"
+				);
+				
 
 				string input = Console.ReadLine();
 
@@ -144,9 +144,9 @@ namespace LexiconExercise2.CinemaPriceHelper
 		{
 			if (age < 5)
 				return AgePricing.Free;			// Free for children under 5
-			if (age < 20)
+			else if (age < 20)
 				return AgePricing.Youth;        // Youth price for age 5 to 19
-			else if (age > 64)
+			else if (age > 64 && age <= 100)
 				return AgePricing.Senior;       // Senior price for age 65 to 100
 			else if (age > 100)
 				return AgePricing.Free;			// Free for seniors over 100

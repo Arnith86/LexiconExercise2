@@ -44,13 +44,13 @@ namespace LexiconExercise2
 
 			do
 			{
-				//TODO: create menu display class.
-				Console.ForegroundColor = ConsoleColor.DarkGray;
-				Console.WriteLine("0: Exit the program.");
-				Console.WriteLine("1: Cinema Pricing.");
-				Console.WriteLine("2: Input Echo. Writes back input multiple times.");
-				Console.WriteLine("3: String Splitter - Which is the third word?");
-				Console.ResetColor();
+				DisplayMenu.DisplayMenuText(
+					"1: Cinema Pricing.\n" +
+					"2: Input Echo. Writes back input multiple times.\n" +
+					"3: String Splitter - Which is the third word?\n" +
+					"0: Exit the program.\n" 
+				);
+				
 
 				input = Console.ReadLine();
 

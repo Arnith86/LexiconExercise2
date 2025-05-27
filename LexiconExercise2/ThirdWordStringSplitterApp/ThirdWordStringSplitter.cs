@@ -8,10 +8,10 @@ namespace LexiconExercise2.ThirdWordStringSplitterApp
 	{
 		// Regex to match a single whitespace character, used to trim the excess whitespaces from the input
 		/* 
-		 * @	: Verbatim string literal used to avoid escape backslashes
-		 * \s	: Matches any whitespace chars like " " "\t" "\n" "   " and so on. 
-		 * +	: Matches one or more occurrences of the preceding character.
-		*/
+		 *	@	: Verbatim string literal used to avoid escape backslashes
+		 *	\s	: Matches any whitespace chars like " " "\t" "\n" "   " and so on. 
+		 *	+	: Matches one or more occurrences of the preceding character.
+		 */
 		Regex _singleWhiteSpaceRegex = new Regex(@"\s+");
 
 		public void FindThirdWord(string[] input)
@@ -55,15 +55,15 @@ namespace LexiconExercise2.ThirdWordStringSplitterApp
 
 			DisplayHeaders.DisplayHeaderText(
 				"Which is the third word? \n" +
-				"By giving a sentence or just strings separated by a space, I will find the third word grouping." +
+				"By giving a sentence or just strings separated by a space, I will find the third word grouping.\n" +
 				"A minimum of 3 words/strings must be entered!");
 
 			do
 			{
-				Console.ForegroundColor = ConsoleColor.DarkGray;
-				Console.WriteLine("0: Return to main menu.");
-				Console.WriteLine("1: Start the input process.");
-				Console.ResetColor();
+				DisplayMenu.DisplayMenuText(
+					"1: Start the input process.\n" +
+					"0: Return to main menu.\n"
+				);
 
 				string input = Console.ReadLine();
 

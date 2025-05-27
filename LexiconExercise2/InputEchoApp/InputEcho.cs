@@ -18,10 +18,11 @@ namespace LexiconExercise2.InputEchoApp
 
 			do
 			{
-				Console.ForegroundColor = ConsoleColor.DarkGray;
-				Console.WriteLine("Do you which to shout into the chamber of echoes?");
-				Console.WriteLine("0: Return to main menu.");
-				Console.WriteLine("1: Shout into the chamber of echoes."); 
+				DisplayMenu.DisplayMenuText(
+					"Do you which to shout into the chamber of echoes?\n" +
+					"1: Shout into the chamber of echoes.\n" +
+					"0: Return to main menu.\n");
+				 
 				Console.ResetColor();
 
 				string input = Console.ReadLine();
