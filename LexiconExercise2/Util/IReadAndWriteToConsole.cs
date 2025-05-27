@@ -4,7 +4,13 @@
 	{
 
 		/// <summary>
-		/// Prints the supplied message to the console.
+		/// Prints the supplied message to the console and breaks to new line.
+		/// </summary>
+		/// <param name="message">A string containing the message to print.</param>
+		void PrintLine(string message);
+
+		/// <summary>
+		/// Prints the supplied message to the console, stays on the same row.
 		/// </summary>
 		/// <param name="message">A string containing the message to print.</param>
 		void Print(string message);

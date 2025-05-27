@@ -13,7 +13,10 @@ namespace LexiconExercise2.Util
 	public class ReadAndWriteToConsole : IReadAndWriteToConsole
 	{
 		/// <inheritdoc/>
-		public void Print(string message) => Console.WriteLine(message);
+		public void Print(string message) => Console.Write(message);
+
+		/// <inheritdoc/>
+		public void PrintLine(string message) => Console.WriteLine(message);
 		
 		/// <inheritdoc/>
 		public string ReadInput() =>

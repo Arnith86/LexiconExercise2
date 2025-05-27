@@ -1,10 +1,13 @@
 ﻿using LexiconExercise2.MenuHelpers;
 using LexiconExercise2.Util;
+using LexiconExercise2.Util.DisplayTextClasses;
 
 namespace LexiconExercise2.CinemaPriceHelper
 {
 	internal class CinemaPricingHelper : ICinemaPricingHelper
 	{
+		private readonly IReadAndWriteToConsole _readAndWriteToConsole;
+		private readonly DisplayTextWrapper _displayTextWrapper;
 		//TODO: use uint when none negative int input is required
 
 		/// <summary>
@@ -18,6 +21,12 @@ namespace LexiconExercise2.CinemaPriceHelper
 			Free = 0
 		}
 
+		public CinemaPricingHelper(IReadAndWriteToConsole readAndWriteToConsole, DisplayTextWrapper displayTextWrapper)
+		{
+			_readAndWriteToConsole = readAndWriteToConsole;
+			_displayTextWrapper = displayTextWrapper;
+		}
+		
 		///<inheritdoc/>
 		public void CinemaPricingMenu() 
 		{
@@ -25,18 +34,19 @@ namespace LexiconExercise2.CinemaPriceHelper
 
 			Console.Clear();
 			 
-			DisplayHeaders.DisplayHeaderText("Cinema Pricing! \nHere to help you find the correct pricing for individuals or groups!");
+			_displayTextWrapper.DisplayHeaders.DisplayHeaderText(
+				"Cinema Pricing! \nHere to help you find the correct pricing for individuals or groups!");
 			
 			do
 			{
-				DisplayMenu.DisplayMenuText(
+				_displayTextWrapper.DisplayMenu.DisplayMenuText(
 					"1: Single visitor.\n" +
 					"2: Group of visitors.\n" +
 					"0: Return to main menu.\n"
 				);
 				
 
-				string input = Console.ReadLine();
+				string input = _readAndWriteToConsole.ReadInput();
 
 				switch (input)
 				{
@@ -51,7 +61,7 @@ namespace LexiconExercise2.CinemaPriceHelper
 						DisplayPricing(nrOfVisitors);
 						break;
 					default:
-						ErrorMessages.InvalidIntInput(); 
+						_displayTextWrapper.DisplayErrorMessages.InvalidIntInput(); 
 						break;
 				}
 			}
@@ -65,20 +75,25 @@ namespace LexiconExercise2.CinemaPriceHelper
 		/// <returns>String in currency format.</returns>
 		private string IntToCurranty(int value) => value.ToString("C");
 
+
+		//TODO: dubblecheck that displayPricing still works
 		///<inheritdoc/>
 		public void DisplayPricing()
 		{
 			int age = RegisterVisitorAge();
 			var pricing = EvaluateSingleVisitorPrice(age);
 
+			string printOut = string.Empty;
 			if (pricing.Equals(AgePricing.Youth))
-				Console.WriteLine("Youth price: {0}\n", IntToCurranty((int)pricing)); 
+				printOut = string.Format("Youth price: {0}\n", IntToCurranty((int)pricing));
 			else if (pricing.Equals(AgePricing.Senior))
-				Console.WriteLine("Senior price: {0}\n", IntToCurranty((int)pricing));
+				printOut = string.Format("Senior price: {0}\n", IntToCurranty((int)pricing));
 			else if (pricing.Equals(AgePricing.Standard))
-				Console.WriteLine("Standard price: {0}\n", IntToCurranty((int)pricing));
+				printOut = string.Format("Standard price: {0}\n", IntToCurranty((int)pricing));
 			else
-				Console.WriteLine("Free: {0}\n", IntToCurranty((int)pricing));
+				printOut = string.Format("Free: {0}\n", IntToCurranty((int)pricing));
+			
+			_readAndWriteToConsole.Print(printOut);
 		}
 
 		///<inheritdoc/>
@@ -89,7 +104,9 @@ namespace LexiconExercise2.CinemaPriceHelper
 			// Registers the ages of the visitors based on user input
 			for (int i = 0; i < visitor; i++)
 			{
-				Console.Write("Visitor {0} ", i+1);
+				_readAndWriteToConsole.Print(
+					string.Format("Visitor {0} ", i+1)
+				);
 				ages.Add(RegisterVisitorAge());
 			}
 
@@ -100,8 +117,8 @@ namespace LexiconExercise2.CinemaPriceHelper
 				totalPrice += (int)EvaluateSingleVisitorPrice(age);
 			
 			Console.Clear();
-			Console.WriteLine($"Visitors: {ages.Count}");
-			Console.WriteLine($"Total price: {totalPrice.ToString("C")} \n");
+			_readAndWriteToConsole.PrintLine($"Visitors: {ages.Count}");
+			_readAndWriteToConsole.PrintLine($"Total price: {totalPrice.ToString("C")} \n");
 		}
 
 
@@ -112,14 +129,16 @@ namespace LexiconExercise2.CinemaPriceHelper
 
 			while (true)
 			{
-				Console.Write("How many visitors: ");
-				input = Console.ReadLine();
+				_readAndWriteToConsole.Print("How many visitors: ");
+				input = _readAndWriteToConsole.ReadInput();
 
 				// Validates the input to ensure that it is a positive integer
 				if (int.TryParse(input, out int visitors) && visitors > 0)
 					return visitors;
 				else
-					ErrorMessages.DisplayErrorMessage("Invalid input, must be a positive integer higher then 0. Try Again!");
+					_displayTextWrapper.DisplayErrorMessages.DisplayErrorMessage(
+						"Invalid input, must be a positive integer higher then 0. Try Again!"
+					);
 			}
 		}
 
@@ -128,15 +147,15 @@ namespace LexiconExercise2.CinemaPriceHelper
 			string input = string.Empty;
 
 			while (true) 
-			{ 
-				Console.Write("What age is the visitor: ");	
-				input = Console.ReadLine();
+			{
+				_readAndWriteToConsole.Print("What age is the visitor: ");	
+				input = _readAndWriteToConsole.ReadInput();
 
 				// Validates the input to ensure that it is a valid age
 				if (int.TryParse(input, out int age) && age >= 0 && age < 180)
 					return age;
 				else
-					ErrorMessages.InvalidAgeInput();
+					_displayTextWrapper.DisplayErrorMessages.InvalidAgeInput();
 			}
 		}
 

@@ -1,35 +1,49 @@
 ﻿using LexiconExercise2.MenuHelpers;
 using LexiconExercise2.Util;
+using LexiconExercise2.Util.DisplayTextClasses;
 using System.Text.RegularExpressions;
 
 namespace LexiconExercise2.ThirdWordStringSplitterApp
 {
 	internal class ThirdWordStringSplitter : IThirdWordStringSplitter
 	{
+		private readonly IReadAndWriteToConsole _readAndWriteToConsole;
+		private readonly DisplayTextWrapper _displayTextWrapper;
+
 		// Regex to match a single whitespace character, used to trim the excess whitespaces from the input
 		/* 
 		 *	@	: Verbatim string literal used to avoid escape backslashes
 		 *	\s	: Matches any whitespace chars like " " "\t" "\n" "   " and so on. 
 		 *	+	: Matches one or more occurrences of the preceding character.
 		 */
-		Regex _singleWhiteSpaceRegex = new Regex(@"\s+");
+		private Regex _singleWhiteSpaceRegex = new Regex(@"\s+");
 
-		public void FindThirdWord(string[] input)
+		public ThirdWordStringSplitter(
+			IReadAndWriteToConsole readAndWriteToConsole, 
+			DisplayTextWrapper displayTextWrapper)
 		{
-			Console.WriteLine(input[2]);					
+			_readAndWriteToConsole = readAndWriteToConsole;
+			_displayTextWrapper = displayTextWrapper;
 		}
+
+		/// <inheritdoc>
+		public void FindThirdWord(string[] input) => 
+			_readAndWriteToConsole.PrintLine(input[2]);					
+		
 
 		///<inheritdoc/>
 		public void RegisterInput()
 		{
 			bool enoughWords = false;
-
+			
 			do
 			{
-				Console.WriteLine("Please enter a sentence comprising a minimum of three words separated by a single space: ");
+			    _readAndWriteToConsole.PrintLine(
+					"Please enter a sentence comprising a minimum of three words separated by a single space: "
+				);
 
 				// Register input and trims start and end whitespaces.
-				var input = Console.ReadLine().Trim();
+				var input = _readAndWriteToConsole.ReadInput().Trim();
 
 				// Splits input into separate strings in an array.
 				// Replaces any instances of multiple whitespace characters with a single space.
@@ -41,7 +55,7 @@ namespace LexiconExercise2.ThirdWordStringSplitterApp
 					enoughWords = true;
 				}
 				else
-					ErrorMessages.DisplayErrorMessage("Not enough words!");
+					_displayTextWrapper.DisplayErrorMessages.DisplayErrorMessage("Not enough words!");
 
 			} while (!enoughWords);
 		}
@@ -53,19 +67,20 @@ namespace LexiconExercise2.ThirdWordStringSplitterApp
 
 			Console.Clear();
 
-			DisplayHeaders.DisplayHeaderText(
+			_displayTextWrapper.DisplayHeaders.DisplayHeaderText(
 				"Which is the third word? \n" +
 				"By giving a sentence or just strings separated by a space, I will find the third word grouping.\n" +
-				"A minimum of 3 words/strings must be entered!");
+				"A minimum of 3 words/strings must be entered!"
+			);
 
 			do
 			{
-				DisplayMenu.DisplayMenuText(
+				_displayTextWrapper.DisplayMenu.DisplayMenuText(
 					"1: Start the input process.\n" +
 					"0: Return to main menu.\n"
 				);
 
-				string input = Console.ReadLine();
+				string input = _readAndWriteToConsole.ReadInput();
 
 				switch (input)
 				{
@@ -76,7 +91,7 @@ namespace LexiconExercise2.ThirdWordStringSplitterApp
 						RegisterInput();
 						break;
 					default:
-						ErrorMessages.InvalidIntInput();
+						_displayTextWrapper.DisplayErrorMessages.InvalidIntInput();
 						break;
 				}
 			}

@@ -1,31 +1,45 @@
 ﻿using LexiconExercise2.MenuHelpers;
 using LexiconExercise2.Util;
+using LexiconExercise2.Util.DisplayTextClasses;
 
 namespace LexiconExercise2.InputEchoApp
 {
 	internal class InputEcho : IInputEcho
 	{
+		IReadAndWriteToConsole _readAndWriteToConsole;
+		DisplayTextWrapper _displayTextWrapper;
+
+		public InputEcho(
+			IReadAndWriteToConsole readAndWriteToConsole,
+			DisplayTextWrapper displayTextWrapper)
+		{
+			_readAndWriteToConsole = readAndWriteToConsole;
+			_displayTextWrapper = displayTextWrapper;
+		}
+
 		///<inheritdoc/>
 		public void InputEchoMenu()
 		{
 			Console.Clear();
-			DisplayHeaders.DisplayHeaderText(
+			_displayTextWrapper.DisplayHeaders.DisplayHeaderText(
 				"This is the chamber of echoes!\n" +
 				"Input your desired echo and how many times it is to be echoed.\n" +
-				"If no desired number of echoes is inputted, then the chamber will echo ten times.\n\n");
+				"If no desired number of echoes is inputted, then the chamber will echo ten times.\n\n"
+			);
 
 			bool returnToMainMenu = false;
 
 			do
 			{
-				DisplayMenu.DisplayMenuText(
+				_displayTextWrapper.DisplayMenu.DisplayMenuText(
 					"Do you which to shout into the chamber of echoes?\n" +
 					"1: Shout into the chamber of echoes.\n" +
-					"0: Return to main menu.\n");
+					"0: Return to main menu.\n"
+				);
 				 
 				Console.ResetColor();
 
-				string input = Console.ReadLine();
+				string input = _readAndWriteToConsole.ReadInput();
 
 				switch (input)
 				{
@@ -36,7 +50,7 @@ namespace LexiconExercise2.InputEchoApp
 						RegisterInput();
 						break;
 					default:
-						ErrorMessages.InvalidIntInput();
+						_displayTextWrapper.DisplayErrorMessages.InvalidIntInput();
 						break;
 				}
 			}
@@ -48,11 +62,11 @@ namespace LexiconExercise2.InputEchoApp
 		{
 			for (int i = 0; i < numberOfEchoes; i++)
 			{
-				Console.Write(input);
+				_readAndWriteToConsole.Print(input);
 			}
 
 			// Adds an empty line after the echoes for better visibility.
-			Console.WriteLine(); 
+			_readAndWriteToConsole.PrintLine("");		
 		}
 
 
@@ -60,13 +74,13 @@ namespace LexiconExercise2.InputEchoApp
 		public void RegisterInput()
 		{
 			// Prompt the user for input to echo.
-			Console.Write("What do you want to echo: ");
-			string input = Console.ReadLine();
+			_readAndWriteToConsole.Print("What do you want to echo: ");
+			string input = _readAndWriteToConsole.ReadInput();
 
 			// Register how often the input should be echoed.
 			// If no input or invalid input is given, then the default of 10 echoes will be used.			
-			Console.Write("How many times do you want it echoed (default 10): ");
-			string numberInput = Console.ReadLine();
+			_readAndWriteToConsole.Print("How many times do you want it echoed (default 10): ");
+			string numberInput = _readAndWriteToConsole.ReadInput();
 
 			if (!string.IsNullOrEmpty(numberInput) && int.TryParse(numberInput, out int numberOfEchoes))
 				EchoInputMultipleTimes(input, numberOfEchoes);

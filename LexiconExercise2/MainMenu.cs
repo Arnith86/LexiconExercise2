@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using LexiconExercise2.Util;
+using LexiconExercise2.Util.DisplayTextClasses;
 
 namespace LexiconExercise2
 {
@@ -18,25 +19,28 @@ namespace LexiconExercise2
 		private IInputEcho _inputEcho;
 		private IThirdWordStringSplitter _thirdWordStringSplitter;
 		private IReadAndWriteToConsole _readAndWriteToConsole;
+		private DisplayTextWrapper _displayTextWrapper;
 
 		public MainMenu(
 			ICinemaPricingHelper cinemaPricingHelper, 
 			IInputEcho inputEcho, 
 			IThirdWordStringSplitter thirdWordStringSplitter,
-			IReadAndWriteToConsole readAndWriteToConsole)
+			IReadAndWriteToConsole readAndWriteToConsole,
+			DisplayTextWrapper displayTextWrapper)
 		{
 			_cinemaPricingHelper = cinemaPricingHelper;
 			_inputEcho = inputEcho;
 			_thirdWordStringSplitter = thirdWordStringSplitter;
 			_readAndWriteToConsole = readAndWriteToConsole;
+			_displayTextWrapper = displayTextWrapper;
 		}
 
 		public void DisplayMainMenu()
 		{
-			DisplayHeaders.DisplayHeaderText(
+			_displayTextWrapper.DisplayHeaders.DisplayHeaderText(
 			   "Welcome, this is the main menu. \n" +
 			   "To test the features bellow input its corresponding number!\n"
-		   );
+		    );
 
 			bool exitProgram = false;
 
@@ -44,7 +48,7 @@ namespace LexiconExercise2
 
 			do
 			{
-				DisplayMenu.DisplayMenuText(
+				_displayTextWrapper.DisplayMenu.DisplayMenuText(
 					"1: Cinema Pricing.\n" +
 					"2: Input Echo. Writes back input multiple times.\n" +
 					"3: String Splitter - Which is the third word?\n" +
@@ -52,7 +56,7 @@ namespace LexiconExercise2
 				);
 				
 
-				input = Console.ReadLine();
+				input = _readAndWriteToConsole.ReadInput();
 
 				switch (input)
 				{
@@ -69,7 +73,7 @@ namespace LexiconExercise2
 						_thirdWordStringSplitter.ThirdWordStringSplitterMenu();
 						break;
 					default:
-						ErrorMessages.InvalidIntInput();
+						_displayTextWrapper.DisplayErrorMessages.InvalidIntInput();
 						break;
 				}
 			}
