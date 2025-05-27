@@ -11,7 +11,7 @@ namespace LexiconExercise2
     {
         static void Main(string[] args)
         {
-			// Class used for reading and writing to and from console.
+			// Classes used for reading and writing text to and from console.
 			IReadAndWriteToConsole readAndWriteToConsole = new ReadAndWriteToConsole();
 
 			// Classes used in the display text wrapper
@@ -21,18 +21,35 @@ namespace LexiconExercise2
 
 			DisplayTextWrapper displayTextWrapper = new DisplayTextWrapper(displayMenu, displayHeaders, displayErrorMessages);
 
-            // The mini applications are instantiated here.
-            ICinemaPricingHelper cinemaPricingHelper = new CinemaPricingHelper(readAndWriteToConsole, displayTextWrapper);
-			IInputEcho inputEcho = new InputEcho(readAndWriteToConsole, displayTextWrapper);
-            IThirdWordStringSplitter thirdWordStringSplitter = new ThirdWordStringSplitter(readAndWriteToConsole, displayTextWrapper);
+			// The class used to validate text input.
+			IValidateTextInput validateTextInput = new ValidateTextInput(readAndWriteToConsole, displayTextWrapper);
             
+            // The mini applications are instantiated here.
+            ICinemaPricingHelper cinemaPricingHelper = new CinemaPricingHelper(
+                readAndWriteToConsole, 
+                displayTextWrapper, 
+                validateTextInput
+            );
+			IInputEcho inputEcho = new InputEcho(
+                readAndWriteToConsole, 
+                displayTextWrapper, 
+                validateTextInput
+            );
+            IThirdWordStringSplitter thirdWordStringSplitter = new ThirdWordStringSplitter(
+                readAndWriteToConsole, 
+                displayTextWrapper,
+                validateTextInput
+            );
+            
+
            
 		    MainMenu mainMenu = new MainMenu(
                 cinemaPricingHelper, 
                 inputEcho, 
                 thirdWordStringSplitter,
 				readAndWriteToConsole,
-                displayTextWrapper
+                displayTextWrapper,
+                validateTextInput
             );
 
             // Starts the main menu of the application

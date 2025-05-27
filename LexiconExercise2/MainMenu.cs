@@ -19,19 +19,22 @@ namespace LexiconExercise2
 		private IThirdWordStringSplitter _thirdWordStringSplitter;
 		private readonly IReadAndWriteToConsole _readAndWriteToConsole;
 		private readonly DisplayTextWrapper _displayTextWrapper;
+		private readonly IValidateTextInput _validateTextInput;
 
 		public MainMenu(
 			ICinemaPricingHelper cinemaPricingHelper, 
 			IInputEcho inputEcho, 
 			IThirdWordStringSplitter thirdWordStringSplitter,
 			IReadAndWriteToConsole readAndWriteToConsole,
-			DisplayTextWrapper displayTextWrapper)
+			DisplayTextWrapper displayTextWrapper, 
+			IValidateTextInput validateTextInput)
 		{
 			_cinemaPricingHelper = cinemaPricingHelper;
 			_inputEcho = inputEcho;
 			_thirdWordStringSplitter = thirdWordStringSplitter;
 			_readAndWriteToConsole = readAndWriteToConsole;
 			_displayTextWrapper = displayTextWrapper;
+			_validateTextInput = validateTextInput;
 		}
 
 		public void DisplayMainMenu()
@@ -47,15 +50,15 @@ namespace LexiconExercise2
 
 			do
 			{
-				_displayTextWrapper.DisplayMenu.DisplayMenuText(
+				input = _validateTextInput.ValidateMenuInput(
 					"1: Cinema Pricing.\n" +
 					"2: Input Echo. Writes back input multiple times.\n" +
 					"3: String Splitter - Which is the third word?\n" +
-					"0: Exit the program.\n" 
+					"0: Exit the program.\n",
+					rangeMin: 0,
+					rangeMax: 3
 				);
 				
-
-				input = _readAndWriteToConsole.ReadInput();
 
 				switch (input)
 				{
@@ -72,7 +75,6 @@ namespace LexiconExercise2
 						_thirdWordStringSplitter.ThirdWordStringSplitterMenu();
 						break;
 					default:
-						_displayTextWrapper.DisplayErrorMessages.InvalidIntInput();
 						break;
 				}
 			}

@@ -8,8 +8,8 @@ namespace LexiconExercise2.CinemaPriceHelper
 	{
 		private readonly IReadAndWriteToConsole _readAndWriteToConsole;
 		private readonly DisplayTextWrapper _displayTextWrapper;
-		//TODO: use uint when none negative int input is required
-
+		private readonly IValidateTextInput _validateTextInput;
+	
 		/// <summary>
 		/// Enum representing the different age pricing categories for cinema tickets.
 		/// </summary>
@@ -21,10 +21,14 @@ namespace LexiconExercise2.CinemaPriceHelper
 			Free = 0
 		}
 
-		public CinemaPricingHelper(IReadAndWriteToConsole readAndWriteToConsole, DisplayTextWrapper displayTextWrapper)
+		public CinemaPricingHelper(
+			IReadAndWriteToConsole readAndWriteToConsole, 
+			DisplayTextWrapper displayTextWrapper,
+			IValidateTextInput validateTextInput)
 		{
 			_readAndWriteToConsole = readAndWriteToConsole;
 			_displayTextWrapper = displayTextWrapper;
+			_validateTextInput = validateTextInput;
 		}
 		
 		///<inheritdoc/>
@@ -39,20 +43,18 @@ namespace LexiconExercise2.CinemaPriceHelper
 			
 			do
 			{
-				_displayTextWrapper.DisplayMenu.DisplayMenuText(
+				string input = _validateTextInput.ValidateMenuInput(
 					"1: Single visitor.\n" +
 					"2: Group of visitors.\n" +
-					"0: Return to main menu.\n"
+					"0: Return to main menu.\n",
+					rangeMin: 0,
+					rangeMax: 2
 				);
-				
-
-				string input = _readAndWriteToConsole.ReadInput();
 
 				switch (input)
 				{
 					case CinemaPricingMenuHelpers.RETURN_TO_MAIN_MENU:
 						return;
-						break;
 					case CinemaPricingMenuHelpers.SINGLE_VISITOR:
 						DisplayPricing();
 						break;
@@ -61,7 +63,6 @@ namespace LexiconExercise2.CinemaPriceHelper
 						DisplayPricing(nrOfVisitors);
 						break;
 					default:
-						_displayTextWrapper.DisplayErrorMessages.InvalidIntInput(); 
 						break;
 				}
 			}
@@ -128,12 +129,11 @@ namespace LexiconExercise2.CinemaPriceHelper
 
 			while (true)
 			{
-				_readAndWriteToConsole.Print("How many visitors: ");
-				input = _readAndWriteToConsole.ReadInput();
-
-				// Validates the input to ensure that it is a positive integer
-				if (int.TryParse(input, out int visitors) && visitors > 0)
-					return visitors;
+				uint visitors = _validateTextInput.ValidateTextIntInput("How many visitors: ");
+			
+				// Performs extra validation to ensure that the input is greater then 0.
+				if (visitors > 0)
+					return (int)visitors;
 				else
 					_displayTextWrapper.DisplayErrorMessages.DisplayErrorMessage(
 						"Invalid input, must be a positive integer higher then 0. Try Again!"
@@ -147,12 +147,12 @@ namespace LexiconExercise2.CinemaPriceHelper
 
 			while (true) 
 			{
-				_readAndWriteToConsole.Print("What age is the visitor: ");	
-				input = _readAndWriteToConsole.ReadInput();
+				// Registers and validates input. Checks parse and negative values
+				uint age = _validateTextInput.ValidateTextIntInput("What age is the visitor: ");
 
-				// Validates the input to ensure that it is a valid age
-				if (int.TryParse(input, out int age) && age >= 0 && age < 180)
-					return age;
+				// Performs the final validation. Checks if age is within a reasonable range.
+				if (age >= 0 && age < 180)
+					return (int)age;
 				else
 					_displayTextWrapper.DisplayErrorMessages.InvalidAgeInput();
 			}

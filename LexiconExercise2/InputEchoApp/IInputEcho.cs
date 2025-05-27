@@ -27,6 +27,6 @@ namespace LexiconExercise2.InputEchoApp
 		/// </summary>
 		/// <param name="input">String to be echoed.</param>
 		/// <param name="numberOfEchoes">The number of echoes to perform, 10 echoes is the default.</param>
-		void EchoInputMultipleTimes(string input, int numberOfEchoes = 10);
+		void EchoInputMultipleTimes(string input, uint numberOfEchoes = 10);
 	}
 }

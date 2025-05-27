@@ -9,6 +9,7 @@ namespace LexiconExercise2.ThirdWordStringSplitterApp
 	{
 		private readonly IReadAndWriteToConsole _readAndWriteToConsole;
 		private readonly DisplayTextWrapper _displayTextWrapper;
+		private readonly IValidateTextInput _validateTextInput;
 
 		// Regex to match a single whitespace character, used to trim the excess whitespaces from the input
 		/* 
@@ -20,10 +21,56 @@ namespace LexiconExercise2.ThirdWordStringSplitterApp
 
 		public ThirdWordStringSplitter(
 			IReadAndWriteToConsole readAndWriteToConsole, 
-			DisplayTextWrapper displayTextWrapper)
+			DisplayTextWrapper displayTextWrapper,
+			IValidateTextInput validateTextInput)
 		{
 			_readAndWriteToConsole = readAndWriteToConsole;
 			_displayTextWrapper = displayTextWrapper;
+			_validateTextInput = validateTextInput;
+		}
+
+
+		///<inheritdoc/>
+		public void ThirdWordStringSplitterMenu()
+		{
+			bool returnToMainMenu = false;
+
+			Console.Clear();
+
+			_displayTextWrapper.DisplayHeaders.DisplayHeaderText(
+				"Which is the third word? \n" +
+				"By giving a sentence or just strings separated by a space, I will find the third word grouping.\n" +
+				"A minimum of 3 words/strings must be entered!"
+			);
+
+			do
+			{
+				string input = _validateTextInput.ValidateMenuInput(
+					"1: Start the input process.\n" +
+					"0: Return to main menu.\n",
+					rangeMin: 0, 
+					rangeMax: 1
+				);
+				//_displayTextWrapper.DisplayMenu.DisplayMenuText(
+				//	"1: Start the input process.\n" +
+				//	"0: Return to main menu.\n"
+				//);
+
+				//string input = _readAndWriteToConsole.ReadInput();
+
+				switch (input)
+				{
+					case ThirdWordStringSplitterMenuHelpers.RETURN_TO_MAIN_MENU:
+						return;
+					case ThirdWordStringSplitterMenuHelpers.FIND_THIRD_WORD:
+						RegisterInput();
+						break;
+					default:
+						//_displayTextWrapper.DisplayErrorMessages.InvalidMenuInput();
+						break;
+				}
+			}
+			while (!returnToMainMenu);
 		}
 
 		/// <inheritdoc>
@@ -61,41 +108,5 @@ namespace LexiconExercise2.ThirdWordStringSplitterApp
 			} while (!enoughWords);
 		}
 
-		///<inheritdoc/>
-		public void ThirdWordStringSplitterMenu()
-		{
-			bool returnToMainMenu = false;
-
-			Console.Clear();
-
-			_displayTextWrapper.DisplayHeaders.DisplayHeaderText(
-				"Which is the third word? \n" +
-				"By giving a sentence or just strings separated by a space, I will find the third word grouping.\n" +
-				"A minimum of 3 words/strings must be entered!"
-			);
-
-			do
-			{
-				_displayTextWrapper.DisplayMenu.DisplayMenuText(
-					"1: Start the input process.\n" +
-					"0: Return to main menu.\n"
-				);
-
-				string input = _readAndWriteToConsole.ReadInput();
-
-				switch (input)
-				{
-					case ThirdWordStringSplitterMenuHelpers.RETURN_TO_MAIN_MENU:
-						return;
-					case ThirdWordStringSplitterMenuHelpers.FIND_THIRD_WORD:
-						RegisterInput();
-						break;
-					default:
-						_displayTextWrapper.DisplayErrorMessages.InvalidIntInput();
-						break;
-				}
-			}
-			while (!returnToMainMenu);
-		}
 	}
 }
