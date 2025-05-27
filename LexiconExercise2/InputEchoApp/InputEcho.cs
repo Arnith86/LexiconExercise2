@@ -6,8 +6,8 @@ namespace LexiconExercise2.InputEchoApp
 {
 	internal class InputEcho : IInputEcho
 	{
-		IReadAndWriteToConsole _readAndWriteToConsole;
-		DisplayTextWrapper _displayTextWrapper;
+		private readonly IReadAndWriteToConsole _readAndWriteToConsole;
+		private readonly DisplayTextWrapper _displayTextWrapper;
 
 		public InputEcho(
 			IReadAndWriteToConsole readAndWriteToConsole,
@@ -45,7 +45,6 @@ namespace LexiconExercise2.InputEchoApp
 				{
 					case InputEchoMenuHelpers.RETURN_TO_MAIN_MENU:
 						return;
-						break;
 					case InputEchoMenuHelpers.SHOUT_INTO_CHAMBER:
 						RegisterInput();
 						break;

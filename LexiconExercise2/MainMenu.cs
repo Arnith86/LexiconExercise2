@@ -14,12 +14,11 @@ namespace LexiconExercise2
 {
 	internal class MainMenu
 	{
-		//TODO: refactor code to use the readAndWriteToConsole class for all console input output
 		private ICinemaPricingHelper _cinemaPricingHelper;
 		private IInputEcho _inputEcho;
 		private IThirdWordStringSplitter _thirdWordStringSplitter;
-		private IReadAndWriteToConsole _readAndWriteToConsole;
-		private DisplayTextWrapper _displayTextWrapper;
+		private readonly IReadAndWriteToConsole _readAndWriteToConsole;
+		private readonly DisplayTextWrapper _displayTextWrapper;
 
 		public MainMenu(
 			ICinemaPricingHelper cinemaPricingHelper, 

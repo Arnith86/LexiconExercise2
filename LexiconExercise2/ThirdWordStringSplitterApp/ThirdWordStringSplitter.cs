@@ -49,6 +49,7 @@ namespace LexiconExercise2.ThirdWordStringSplitterApp
 				// Replaces any instances of multiple whitespace characters with a single space.
 				var singleSpaceInput = _singleWhiteSpaceRegex.Replace(input, " ").Split(' ');
 
+				// There is a minimum requirement of three words in the input string.
 				if (singleSpaceInput.Length >= 3)
 				{
 					FindThirdWord(singleSpaceInput);
@@ -86,7 +87,6 @@ namespace LexiconExercise2.ThirdWordStringSplitterApp
 				{
 					case ThirdWordStringSplitterMenuHelpers.RETURN_TO_MAIN_MENU:
 						return;
-						break;
 					case ThirdWordStringSplitterMenuHelpers.FIND_THIRD_WORD:
 						RegisterInput();
 						break;

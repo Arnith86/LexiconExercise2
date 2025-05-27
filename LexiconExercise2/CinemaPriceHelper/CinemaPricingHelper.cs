@@ -76,7 +76,6 @@ namespace LexiconExercise2.CinemaPriceHelper
 		private string IntToCurranty(int value) => value.ToString("C");
 
 
-		//TODO: dubblecheck that displayPricing still works
 		///<inheritdoc/>
 		public void DisplayPricing()
 		{
