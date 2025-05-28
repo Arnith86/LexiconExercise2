@@ -4,23 +4,15 @@ using LexiconExercise2.Util.DisplayTextClasses;
 
 namespace LexiconExercise2.CinemaPriceHelper
 {
+	/// <summary>
+	/// A class that handles cinema pricing logic for single visitors or groups of visitors. 
+	/// </summary>
 	internal class CinemaPricingHelper : ICinemaPricingHelper
 	{
 		private readonly IReadAndWriteToConsole _readAndWriteToConsole;
 		private readonly DisplayTextWrapper _displayTextWrapper;
 		private readonly IValidateTextInput _validateTextInput;
 	
-		///// <summary>
-		///// Enum representing the different age pricing categories for cinema tickets.
-		///// </summary>
-		//private enum AgePricing
-		//{
-		//	Youth = 80,
-		//	Standard = 120,
-		//	Senior = 90,
-		//	Free = 0
-		//}
-
 		public CinemaPricingHelper(
 			IReadAndWriteToConsole readAndWriteToConsole, 
 			DisplayTextWrapper displayTextWrapper,
@@ -39,7 +31,8 @@ namespace LexiconExercise2.CinemaPriceHelper
 			Console.Clear();
 			 
 			_displayTextWrapper.DisplayHeaders.DisplayHeaderText(
-				"Cinema Pricing! \nHere to help you find the correct pricing for individuals or groups!");
+				"Cinema Pricing! \nHere to help you find the correct pricing for individuals or groups!"
+			);
 			
 			do
 			{
@@ -84,14 +77,23 @@ namespace LexiconExercise2.CinemaPriceHelper
 			var pricing = EvaluateSingleVisitorPrice(age);
 
 			string printOut = string.Empty;
+
 			if (pricing.Equals(AgePricing.Youth))
+			{
 				printOut = string.Format("Youth price: {0}\n", IntToCurranty((int)pricing));
+			}
 			else if (pricing.Equals(AgePricing.Senior))
+			{
 				printOut = string.Format("Senior price: {0}\n", IntToCurranty((int)pricing));
+			}
 			else if (pricing.Equals(AgePricing.Standard))
+			{
 				printOut = string.Format("Standard price: {0}\n", IntToCurranty((int)pricing));
+			}
 			else
+			{
 				printOut = string.Format("Free: {0}\n", IntToCurranty((int)pricing));
+			}
 			
 			_readAndWriteToConsole.Print(printOut);
 		}
@@ -160,7 +162,7 @@ namespace LexiconExercise2.CinemaPriceHelper
 
 		private bool IsReasonableAge(uint age)
 		{
-			return age >= 0 && age < 150;
+			return (age >= 0) && (age < 150);
 		}
 
 		private AgePricing EvaluateSingleVisitorPrice(int age)
@@ -169,7 +171,7 @@ namespace LexiconExercise2.CinemaPriceHelper
 				return AgePricing.Free;			// Free for children under 5
 			else if (age < 20)
 				return AgePricing.Youth;        // Youth price for age 5 to 19
-			else if (age > 64 && age <= 100)
+			else if ((age > 64) && (age <= 100))
 				return AgePricing.Senior;       // Senior price for age 65 to 100
 			else if (age > 100)
 				return AgePricing.Free;			// Free for seniors over 100

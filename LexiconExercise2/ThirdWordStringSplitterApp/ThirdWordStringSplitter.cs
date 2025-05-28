@@ -5,6 +5,9 @@ using System.Text.RegularExpressions;
 
 namespace LexiconExercise2.ThirdWordStringSplitterApp
 {
+	/// <summary>
+	/// A class that splits a string input into words and finds the third word in the input.
+	/// </summary>
 	internal class ThirdWordStringSplitter : IThirdWordStringSplitter
 	{
 		private readonly IReadAndWriteToConsole _readAndWriteToConsole;
@@ -51,13 +54,7 @@ namespace LexiconExercise2.ThirdWordStringSplitterApp
 					rangeMin: 0, 
 					rangeMax: 1
 				);
-				//_displayTextWrapper.DisplayMenu.DisplayMenuText(
-				//	"1: Start the input process.\n" +
-				//	"0: Return to main menu.\n"
-				//);
-
-				//string input = _readAndWriteToConsole.ReadInput();
-
+	
 				switch (input)
 				{
 					case ThirdWordStringSplitterMenuHelpers.RETURN_TO_MAIN_MENU:
@@ -66,7 +63,6 @@ namespace LexiconExercise2.ThirdWordStringSplitterApp
 						RegisterInput();
 						break;
 					default:
-						//_displayTextWrapper.DisplayErrorMessages.InvalidMenuInput();
 						break;
 				}
 			}

@@ -4,6 +4,9 @@ using LexiconExercise2.Util.DisplayTextClasses;
 
 namespace LexiconExercise2.InputEchoApp
 {
+	/// <summary>
+	/// A class that receives input from user and echoes it back a specified number of times.
+	/// </summary>
 	internal class InputEcho : IInputEcho
 	{
 		private readonly IReadAndWriteToConsole _readAndWriteToConsole;
