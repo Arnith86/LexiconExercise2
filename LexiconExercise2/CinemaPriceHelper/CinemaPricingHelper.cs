@@ -10,16 +10,16 @@ namespace LexiconExercise2.CinemaPriceHelper
 		private readonly DisplayTextWrapper _displayTextWrapper;
 		private readonly IValidateTextInput _validateTextInput;
 	
-		/// <summary>
-		/// Enum representing the different age pricing categories for cinema tickets.
-		/// </summary>
-		private enum AgePricing
-		{
-			Youth = 80,
-			Standard = 120,
-			Senior = 90,
-			Free = 0
-		}
+		///// <summary>
+		///// Enum representing the different age pricing categories for cinema tickets.
+		///// </summary>
+		//private enum AgePricing
+		//{
+		//	Youth = 80,
+		//	Standard = 120,
+		//	Senior = 90,
+		//	Free = 0
+		//}
 
 		public CinemaPricingHelper(
 			IReadAndWriteToConsole readAndWriteToConsole, 
