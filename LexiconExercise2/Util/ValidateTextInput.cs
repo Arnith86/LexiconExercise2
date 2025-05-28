@@ -80,13 +80,10 @@ namespace LexiconExercise2.Util
 
 				if (string.IsNullOrWhiteSpace(input))
 				{
-					 _displayTextWrapper.DisplayErrorMessages.InvalidInputEmpty();
+					_displayTextWrapper.DisplayErrorMessages.InvalidInputEmpty();
 				}
 				// Tries to convert input to int, and check if it is within menu range.
-				else if (
-					!int.TryParse(input, out int intInput) || 
-					intInput < rangeMin ||	
-					intInput > rangeMax)
+				else if (!int.TryParse(input, out int intInput) || IsInputOutOfRange(rangeMin, rangeMax, intInput))
 				{
 					_displayTextWrapper.DisplayErrorMessages.InvalidMenuInput();
 				}
@@ -95,6 +92,11 @@ namespace LexiconExercise2.Util
 			}
 
 			return input;
+		}
+
+		private bool IsInputOutOfRange(int rangeMin, int rangeMax, int input)
+		{
+			return 	input < rangeMin || input > rangeMax;
 		}
 	}
 }
