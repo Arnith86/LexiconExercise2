@@ -145,17 +145,22 @@ namespace LexiconExercise2.CinemaPriceHelper
 		{
 			string input = string.Empty;
 
-			while (true) 
+			while (true)
 			{
 				// Registers and validates input. Checks parse and negative values
 				uint age = _validateTextInput.ValidateTextIntInput("What age is the visitor: ");
 
 				// Performs the final validation. Checks if age is within a reasonable range.
-				if (age >= 0 && age < 180)
+				if (IsReasonableAge(age))
 					return (int)age;
 				else
 					_displayTextWrapper.DisplayErrorMessages.InvalidAgeInput();
 			}
+		}
+
+		private bool IsReasonableAge(uint age)
+		{
+			return age >= 0 && age < 150;
 		}
 
 		private AgePricing EvaluateSingleVisitorPrice(int age)
